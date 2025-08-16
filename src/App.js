@@ -9,7 +9,9 @@ import Home from './pages/Home';
 import EventVoting from './pages/events/EventVoting';
 import TeacherReviews from './pages/reviews/TeacherReviews';
 import TeacherDashboard from './pages/reviews/TeacherDashboard';
+import AllTeacherReviews from './pages/reviews/AllTeacherReviews';
 import CourseRatings from './pages/courses/CourseRatings';
+import AdminDashboard from './pages/admin/AdminDashboard';
 import StudentElections from './pages/elections/StudentElections';
 import QAForum from './pages/qa/QAForum';
 import ServicesFeedback from './pages/feedback/ServicesFeedback';
@@ -86,11 +88,13 @@ const AnimatedRoutes = () => {
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<EventVoting />} />
           <Route path="/reviews" element={<TeacherReviews />} />
+          <Route path="/reviews/teacher/:teacherId/all-reviews" element={<AllTeacherReviews />} />
           <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
           <Route path="/courses" element={<CourseRatings />} />
           <Route path="/elections" element={<StudentElections />} />
           <Route path="/qa" element={<QAForum />} />
           <Route path="/feedback" element={<ServicesFeedback />} />
+          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

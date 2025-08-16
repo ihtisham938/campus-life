@@ -57,9 +57,10 @@ import {
   Dashboard
 } from '@mui/icons-material';
 import { format } from 'date-fns';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const TeacherReviews = () => {
+  const navigate = useNavigate();
   const [tabValue, setTabValue] = useState(0);
   const [openReview, setOpenReview] = useState(false);
   const [selectedTeacher, setSelectedTeacher] = useState(null);
@@ -391,7 +392,12 @@ const TeacherReviews = () => {
         >
           Write Review
         </Button>
-        <Button startIcon={<Visibility />}>
+        <Button 
+          startIcon={<Visibility />}
+          onClick={() => {
+            navigate(`/reviews/teacher/${teacher.id}/all-reviews`);
+          }}
+        >
           View All Reviews
         </Button>
       </CardActions>
